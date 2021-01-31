@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-var url = process.env.mongourl;
+var url = "mongodb+srv://lfss:042010saLu@cluster0.qcgt6.mongodb.net/myword?retryWrites=true&w=majority";
 console.log(url);
 mongoose.connect(url).then(() => {
     console.log("Connected to Database");
