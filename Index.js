@@ -7,6 +7,9 @@ let mongoose = require('mongoose');
 // Initialise the app
 let app = express();
 
+require('dotenv').config();
+
+
 // Import routes
 let apiRoutes = require("./APIRoutes");
 // Configure bodyparser to handle post requests
@@ -15,8 +18,8 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-var url = "";
-
+var url = process.env.mongourl;
+console.log(url);
 mongoose.connect(url).then(() => {
     console.log("Connected to Database");
 }).catch((err) => {
